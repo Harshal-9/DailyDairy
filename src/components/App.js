@@ -3,6 +3,7 @@ import Date from "./Date";
 import UploadImg from "./UploadImg";
 import Dropdown from "./Dropdown";
 import FarmerDropdown from "./FarmerDropdown";
+import RadioButton from "./RadioButton";
 
 function App() {
   return (
@@ -26,6 +27,10 @@ function App() {
       <Dropdown />
       <br />
       <hr />
+      <RadioButton />
+      <br />
+      <hr />
+      <RadioButton />
     </div>
   );
 }
