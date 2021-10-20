@@ -14,6 +14,7 @@ function App() {
       <br />
       <Dropdown />
       <Dropdown />
+      <Dropdown />
     </div>
   );
 }
