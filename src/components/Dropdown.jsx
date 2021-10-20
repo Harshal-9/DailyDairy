@@ -1,29 +1,34 @@
 import React from "react";
-import SelFunction from "./Spraying";
+import Spraying from "./Spraying";
 import Fertilizer from "./Fertilizer";
+import Maintenance from "./Maintenance";
 
 function Dropdown() {
   return (
-    <div>
-      <table style={{ textAlign: "center" }}>
+    <table className="myTable" style={{ textAlign: "center" }}>
+      <tbody>
         <tr>
           <td style={{ textAlign: "center" }}>Type</td>
           <td style={{ textAlign: "center" }}>Chemical</td>
+          <td style={{ textAlign: "center" }}>Maintenance</td>
           <td style={{ textAlign: "center" }}>Quantity</td>
         </tr>
         <tr>
           <td>
-            <SelFunction />
+            <Spraying />
           </td>
           <td>
             <Fertilizer />
           </td>
           <td>
+            <Maintenance />
+          </td>
+          <td>
             <input></input>
           </td>
         </tr>
-      </table>
-    </div>
+      </tbody>
+    </table>
   );
 }
 

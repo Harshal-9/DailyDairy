@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Select from "react-select";
 
 function SetMaintenance() {
   const data = [
+    {
+      value: 0,
+      label: "None"
+    },
     {
       value: 1,
       label: "Tractor"
@@ -29,12 +33,11 @@ function SetMaintenance() {
     }
   ];
 
-  const [selectedValue, setSelectedValue] = useState(null);
-
   // handle onChange event of the dropdown
   const handleChange = (e) => {
-    setSelectedValue(e.value);
+    console.log(e.label);
   };
+
   return (
     <Select
       placeholder="Select Option"

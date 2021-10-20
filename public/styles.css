@@ -2,8 +2,32 @@
 .Date,
 .Dropdown,
 .UploadImg,
+.Fertilizer,
+table,
 button,
 h1 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
+  color: purple;
+}
+
+.myTable {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.farmerDrop,
+select {
+  width: 150px;
+}
+
+#farmerdd {
+  color: red;
+  display: inline-block;
+}
+
+.App {
+  margin-left: 25%;
+  margin-right: 25%;
+  background-color: #dcf1f1;
 }
