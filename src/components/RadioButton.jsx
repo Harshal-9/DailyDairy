@@ -3,7 +3,7 @@ import Dropdown from "./Dropdown";
 
 // function
 
-function RadioButton() {
+function RadioButton(props) {
   const [isClicked, renderPage] = useState(false);
 
   function selectedRadio(event) {
@@ -14,10 +14,10 @@ function RadioButton() {
   return (
     <div>
       <div onChange={selectedRadio}>
-        <input type="radio" value="YES" name="checkRadio" /> YES
-        <input type="radio" value="No" name="checkRadio" /> NO
+        <input type="radio" value="YES" name="fertilizer" /> YES
+        <input type="radio" value="No" name="fertilizer" /> NO
       </div>
-      <div>{isClicked === true ? <Dropdown /> : null}</div>
+      <div>{isClicked === true ? <Dropdown type={props.type} /> : null}</div>
     </div>
   );
 }

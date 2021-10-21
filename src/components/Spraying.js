@@ -39,12 +39,14 @@ function Spraying() {
   };
 
   return (
-    <Select
-      placeholder="Select Option"
-      // value={data.find((obj) => obj.value === selectedValue)} // set selected value
-      options={data} // set list of the data
-      onChange={handleChange} // assign onChange function
-    />
+    <div>
+      <Select
+        placeholder="Select Option"
+        // value={data.find((obj) => obj.value === selectedValue)} // set selected value
+        options={data} // set list of the data
+        onChange={handleChange} // assign onChange function
+      />
+    </div>
   );
 }
 
