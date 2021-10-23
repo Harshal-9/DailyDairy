@@ -2,38 +2,49 @@ import React from "react";
 import Date from "./Date";
 import FarmerDropdown from "./FarmerDropdown";
 import RadioButton from "./RadioButton";
+import PlotDropdown from "./PlotDropdown";
 
 function App() {
   const key = [1, 2, 3, 4, 5];
   return (
     <div className="App">
-      <h1 style={{ textAlign: "center" }}>Farmer's Digital Diary</h1>
+      <h1 className="heading">Farmer's Digital Diary</h1>
       <hr /> <br />
       <FarmerDropdown />
+      <br />
+      <hr /> <br />
+      <PlotDropdown />
       <br />
       <hr /> <br />
       <Date />
       <br />
       <br />
       <hr />
-      <h5>Was any spraying done today?</h5>
+      <h3>Was any spraying done today?</h3>
       <RadioButton type={key[0]} />
       <br />
       <hr />
-      <h5>Was any irrigation done today?</h5>
+      <h3>Was any irrigation done today?</h3>
       <RadioButton type={key[1]} />
       <br />
       <hr />
-      <h5>Was any work done in farm?</h5>
+      <h3>Was any work done in farm?</h3>
       <RadioButton type={key[2]} />
       <br />
       <hr />
-      <h5>Any soil work done today?</h5>
+      <h3>Any soil work done today?</h3>
       <RadioButton type={key[3]} />
       <br />
       <hr />
-      <h5>Any maintenance work done today?</h5>
+      <h3>Any maintenance work done today?</h3>
       <RadioButton type={key[4]} />
+      <br />
+      <hr />
+      <h3>Any other work to be done?</h3>
+      <textarea className="description" placeholder="Type here... "></textarea>
+      <br />
+      <hr />
+      <button className="submitButton">Submit</button>
     </div>
   );
 }

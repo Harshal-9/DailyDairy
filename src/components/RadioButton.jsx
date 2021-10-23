@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Dropdown from "./Dropdown";
 
-// function
-
 function RadioButton(props) {
   const [isClicked, renderPage] = useState(false);
 
@@ -12,11 +10,12 @@ function RadioButton(props) {
   }
 
   return (
-    <div>
+    <div style={{ backgroundColor: isClicked === true ? "#f0fcfc" : "white" }}>
       <div onChange={selectedRadio}>
         <input type="radio" value="YES" name="fertilizer" /> YES
         <input type="radio" value="No" name="fertilizer" /> NO
       </div>
+      <br />
       <div>{isClicked === true ? <Dropdown type={props.type} /> : null}</div>
     </div>
   );

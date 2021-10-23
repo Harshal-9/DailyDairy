@@ -4,8 +4,17 @@ function UploadImg() {
   return (
     <div>
       <form>
-        <input type="file" id="myFile" name="uploadedFile" />
-        <input type="submit" />
+        <input
+          style={{
+            display: "inline-block",
+            color: "transparent",
+            width: "50%"
+          }}
+          type="file"
+          id="myFile"
+          name="uploadedFile"
+        />
+        {/* <input style={{ display: "inline-block" }} type="submit" /> */}
       </form>
     </div>
   );

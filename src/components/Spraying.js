@@ -41,6 +41,7 @@ function Spraying() {
   return (
     <div>
       <Select
+        className="reactSelect"
         placeholder="Select Option"
         // value={data.find((obj) => obj.value === selectedValue)} // set selected value
         options={data} // set list of the data
