@@ -8,7 +8,7 @@ function App() {
   const key = [1, 2, 3, 4, 5];
   return (
     <div className="App">
-      <h1 className="heading">The Farmer's Digital Diary</h1>
+      <h1 className="heading">Farmer's Digital Diary</h1>
       <hr /> <br />
       <FarmerDropdown />
       <br />
