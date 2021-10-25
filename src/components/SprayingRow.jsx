@@ -1,7 +1,7 @@
 import React from "react";
 import Spraying from "./Spraying";
 import UploadImg from "./UploadImg";
-
+import ChemicalDropDown from "./ChemicalDropDown";
 function SprayingRow() {
   return (
     <div>
@@ -9,7 +9,7 @@ function SprayingRow() {
         <Spraying />
       </td>
       <td>
-        <Spraying />
+        <ChemicalDropDown />
       </td>
       <td>
         <input className="textInput"></input>

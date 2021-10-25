@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Select from "react-select";
 
-function SetMaintenance() {
+function SoilWork() {
   const data = [
     {
       value: 0,
@@ -9,46 +9,42 @@ function SetMaintenance() {
     },
     {
       value: 1,
-      label: "Tractor"
+      label: "Tilling"
     },
     {
       value: 2,
-      label: "Dripline"
+      label: "Rotavator"
     },
     {
       value: 3,
-      label: "Water-pump"
+      label: "Stones removal"
     },
     {
       value: 4,
-      label: "Sprayer"
+      label: "Bed formation"
     },
     {
       value: 5,
-      label: "Sand-Filter"
-    },
-    {
-      value: 6,
-      label: "Structure"
+      label: "New soil application"
     }
   ];
 
-  const [val, setVal] = useState("default");
+  // const [val, setVal] = useState("default");
 
   // handle onChange event of the dropdown
   const handleChange = (e) => {
-    setVal(e.label);
+    // setVal(e.label);
     console.log(e.label);
   };
 
   return (
     <Select
       placeholder="Select Option"
-      value={val}
+      // value={val}
       options={data} // set list of the data
       onChange={handleChange} // assign onChange function
     />
   );
 }
 
-export default SetMaintenance;
+export default SoilWork;

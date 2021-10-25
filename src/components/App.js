@@ -24,7 +24,7 @@ function App() {
       <RadioButton type={key[0]} />
       <br />
       <hr />
-      <h3>Was any irrigation done today?</h3>
+      <h3>Was any fertilization + irrigation done today?</h3>
       <RadioButton type={key[1]} />
       <br />
       <hr />

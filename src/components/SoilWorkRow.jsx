@@ -1,5 +1,5 @@
 import React from "react";
-import Spraying from "./Spraying";
+import SoilWork from "./SoilWork";
 import UploadImg from "./UploadImg";
 
 function SoilWorkRow() {
@@ -7,7 +7,7 @@ function SoilWorkRow() {
     <div>
       <tr>
         <td>
-          <Spraying />
+          <SoilWork />
         </td>
         <td>
           <input className="textInput"></input>

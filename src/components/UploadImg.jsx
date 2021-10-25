@@ -8,7 +8,8 @@ function UploadImg() {
           style={{
             display: "inline-block",
             color: "transparent",
-            width: "50%"
+            width: "75%",
+            paddingLeft: "20px"
           }}
           type="file"
           id="myFile"

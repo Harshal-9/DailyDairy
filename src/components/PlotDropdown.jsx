@@ -1,5 +1,6 @@
 import React from "react";
 import Select from "react-select";
+import { useState } from "react";
 
 function PlotDropdown() {
   const data = [
@@ -18,12 +19,19 @@ function PlotDropdown() {
     {
       value: 3,
       label: "P4"
+    },
+    {
+      value: 4,
+      label: "ALL"
     }
   ];
 
+  const [val, setVal] = useState("default");
+
   // handle onChange event of the dropdown
-  const handleChange = (e) => {
-    console.log(e.label);
+  const handleChange = (opt) => {
+    setVal(opt.value);
+    console.log(opt.label, opt.value);
   };
 
   return (
@@ -31,6 +39,7 @@ function PlotDropdown() {
       <label htmlFor="plotdd">Select plot : </label>
       <Select
         id="plotdd"
+        value={val}
         className="plotDrop"
         options={data}
         onChange={handleChange}
