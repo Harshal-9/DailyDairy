@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 
 function SetFertilizer() {
@@ -24,15 +24,18 @@ function SetFertilizer() {
     { value: 19, label: "Pend/Gandulkhat" }
   ];
 
+  const [val, setVal] = useState("default");
+
   // handle onChange event of the dropdown
   const handleChange = (e) => {
+    setVal(e.label);
     console.log(e.label);
   };
 
   return (
     <Select
       placeholder="Select Option"
-      // value={data.find((obj) => obj.value === selectedValue)} // set selected value
+      value={val}
       options={data} // set list of the data
       onChange={handleChange} // assign onChange function
     />

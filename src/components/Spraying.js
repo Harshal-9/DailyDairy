@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Select from "react-select";
 
 function Spraying() {
@@ -9,33 +9,46 @@ function Spraying() {
     },
     {
       value: 1,
-      label: "Insectiside"
+      label: "Fertilizer"
     },
     {
       value: 2,
-      label: "Fungiside"
+      label: "Fungicide"
     },
     {
       value: 3,
-      label: "Herbiside"
+      label: "Insecticide"
     },
     {
       value: 4,
-      label: "Nematiside"
+      label: "Organic"
     },
     {
       value: 5,
-      label: "Growth Regulator"
-    },
-    {
-      value: 6,
-      label: "Seed Treatment"
+      label: "Plant growth Regulator"
     }
   ];
 
+  const [val, setVal] = useState(0);
+
   // handle onChange event of the dropdown
+  // function handleChange(e) {
+  //   const selected = e.value;
+  //   console.log(e.label);
+  //   console.log(selected);
+  //   setVal(selected);
+  //   console.log(val);
+  // }
+
+  function later() {
+    console.log(val);
+  }
+
   const handleChange = (e) => {
-    console.log(e.label);
+    console.log(e);
+    setVal(e.value);
+    // console.log(val);
+    later();
   };
 
   return (
@@ -43,7 +56,8 @@ function Spraying() {
       <Select
         className="reactSelect"
         placeholder="Select Option"
-        // value={data.find((obj) => obj.value === selectedValue)} // set selected value
+        value={data.find((obj) => obj.value === val)} // set selected value
+        // value={data[val].label}
         options={data} // set list of the data
         onChange={handleChange} // assign onChange function
       />

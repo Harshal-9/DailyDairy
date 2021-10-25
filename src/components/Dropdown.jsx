@@ -8,6 +8,9 @@ import FertilizerRow from "./FertilizerRow";
 import FarmWorkRow from "./FarmWorkRow";
 import SoilWorkRow from "./SoilWorkRow";
 import MaintenanceRow from "./MaintenanceRow";
+import SoilWork from "./SoilWork";
+import FarmWork from "./FarmWork";
+import ChemicalDropDown from "./ChemicalDropDown";
 
 function Dropdown(props) {
   return (
@@ -27,7 +30,7 @@ function Dropdown(props) {
                   <Spraying />
                 </td>
                 <td>
-                  <Spraying />
+                  <ChemicalDropDown />
                 </td>
                 <td>
                   <input className="textInput"></input>
@@ -82,7 +85,7 @@ function Dropdown(props) {
               </tr>
               <tr>
                 <td>
-                  <Spraying />
+                  <FarmWork />
                 </td>
                 <td>
                   <input className="textInput"></input>
@@ -107,7 +110,7 @@ function Dropdown(props) {
               </tr>
               <tr>
                 <td>
-                  <Spraying />
+                  <SoilWork />
                 </td>
                 <td>
                   <input className="textInput"></input>

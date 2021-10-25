@@ -6,7 +6,7 @@ function Date() {
       <form>
         <label htmlFor="myDate">Select a Date : </label>
         <input type="date" id="myDate" name="myDate" />
-        <input type="submit" />
+        {/* <input type="submit" /> */}
       </form>
     </div>
   );
