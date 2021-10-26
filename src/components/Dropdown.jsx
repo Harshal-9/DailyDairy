@@ -1,16 +1,9 @@
 import React from "react";
-import Spraying from "./Spraying";
-import Fertilizer from "./Fertilizer";
-import Maintenance from "./Maintenance";
-import UploadImg from "./UploadImg";
-import SprayingRow from "./SprayingRow";
-import FertilizerRow from "./FertilizerRow";
-import FarmWorkRow from "./FarmWorkRow";
-import SoilWorkRow from "./SoilWorkRow";
-import MaintenanceRow from "./MaintenanceRow";
-import SoilWork from "./SoilWork";
-import FarmWork from "./FarmWork";
-import ChemicalDropDown from "./ChemicalDropDown";
+import SprayingTable from "./SprayingTable";
+import FertilizerTable from "./FertilizerTable";
+import FarmWorkTable from "./FarmWorkTable";
+import SoilWorkTable from "./SoilWorkTable";
+import MaintenanceTable from "./MaintenanceTable";
 
 function Dropdown(props) {
   return (
@@ -19,135 +12,31 @@ function Dropdown(props) {
         <div>
           {props.type === 1 ? (
             <div>
-              <tr>
-                <th style={{ textAlign: "center" }}>Type</th>
-                <th style={{ textAlign: "center" }}>Chemical</th>
-                <th style={{ textAlign: "center" }}>Quantity</th>
-                <th style={{ textAlign: "center" }}>Image</th>
-              </tr>
-              <tr>
-                <td>
-                  <Spraying />
-                </td>
-                <td>
-                  <ChemicalDropDown />
-                </td>
-                <td>
-                  <input className="textInput"></input>
-                </td>
-                <td>
-                  <UploadImg />
-                </td>
-              </tr>
-
-              <SprayingRow />
-              <SprayingRow />
-              <SprayingRow />
-              <SprayingRow />
+              <SprayingTable />
             </div>
           ) : null}
+
           {props.type === 2 ? (
             <div>
-              <h3 style={{ display: "inline-block" }}>
-                Enter Number of hours of irrigation :
-              </h3>
-              <input style={{ display: "inline-block" }}></input>
-              <br />
-              <tr>
-                <th style={{ textAlign: "center" }}>Fertilizer</th>
-                <th style={{ textAlign: "center" }}>Quantity</th>
-                <th style={{ textAlign: "center" }}>Image</th>
-              </tr>
-              <tr>
-                <td>
-                  <Fertilizer />
-                </td>
-                <td>
-                  <input className="textInput"></input>
-                </td>
-                <td>
-                  <UploadImg />
-                </td>
-              </tr>
-              <FertilizerRow />
-              <FertilizerRow />
-              <FertilizerRow />
-              <FertilizerRow />
+              <FertilizerTable />
             </div>
           ) : null}
 
           {props.type === 3 ? (
             <div>
-              <tr>
-                <th style={{ textAlign: "center" }}>Work</th>
-                <th style={{ textAlign: "center" }}>Details</th>
-                <th style={{ textAlign: "center" }}>Image</th>
-              </tr>
-              <tr>
-                <td>
-                  <FarmWork />
-                </td>
-                <td>
-                  <input className="textInput"></input>
-                </td>
-                <td>
-                  <UploadImg />
-                </td>
-              </tr>
-
-              <FarmWorkRow />
-              <FarmWorkRow />
-              <FarmWorkRow />
-              <FarmWorkRow />
+              <FarmWorkTable />
             </div>
           ) : null}
+
           {props.type === 4 ? (
             <div>
-              <tr>
-                <th style={{ textAlign: "center" }}>Work</th>
-                <th style={{ textAlign: "center" }}>Total Distance Covered</th>
-                <th style={{ textAlign: "center" }}>Image</th>
-              </tr>
-              <tr>
-                <td>
-                  <SoilWork />
-                </td>
-                <td>
-                  <input className="textInput"></input>
-                </td>
-                <td>
-                  <UploadImg />
-                </td>
-              </tr>
-
-              <SoilWorkRow />
-              <SoilWorkRow />
-              <SoilWorkRow />
-              <SoilWorkRow />
+              <SoilWorkTable />
             </div>
           ) : null}
+
           {props.type === 5 ? (
             <div>
-              <tr>
-                <th style={{ textAlign: "center" }}>Items</th>
-                <th style={{ textAlign: "center" }}>Details</th>
-                <th style={{ textAlign: "center" }}>Image</th>
-              </tr>
-              <tr>
-                <td>
-                  <Maintenance />
-                </td>
-                <td>
-                  <input className="textInput"></input>
-                </td>
-                <td>
-                  <UploadImg />
-                </td>
-              </tr>
-              <MaintenanceRow />
-              <MaintenanceRow />
-              <MaintenanceRow />
-              <MaintenanceRow />
+              <MaintenanceTable />
             </div>
           ) : null}
         </div>

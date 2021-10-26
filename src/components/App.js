@@ -1,5 +1,4 @@
 import React from "react";
-import Date from "./Date";
 import FarmerDropdown from "./FarmerDropdown";
 import RadioButton from "./RadioButton";
 import PlotDropdown from "./PlotDropdown";
@@ -16,7 +15,8 @@ function App() {
       <PlotDropdown />
       <br />
       <hr /> <br />
-      <Date />
+      <label htmlFor="myDate">Select a Date : </label>
+      <input type="date" id="myDate" name="myDate" />
       <br />
       <br />
       <hr />
