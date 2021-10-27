@@ -185,7 +185,28 @@ const plantGrowthRegulatorData = [
   { value: 21, label: "FE Kelp" }
 ];
 
-function ChemicalDropDown() {
+function ChemicalDropDown(props) {
+  const selectedType = props.selectedType;
+
+  function getArray() {
+    switch (selectedType) {
+      case "Fertilizer":
+        return fertilizerData;
+
+      case "Fungicide":
+        return fungicideData;
+
+      case "Insecticide":
+        return insectcideData;
+
+      case "Organic":
+        return organicData;
+
+      default:
+        return plantGrowthRegulatorData;
+    }
+  }
+
   const handleChange = (e) => {
     // setVal(e.label);
     console.log(e.label);
@@ -195,7 +216,7 @@ function ChemicalDropDown() {
     <Select
       // placeholder="Select Option"
       // value={val}
-      options={organicData} // set list of the data
+      options={getArray()} // set list of the data
       onChange={handleChange} // assign onChange function
     />
   );

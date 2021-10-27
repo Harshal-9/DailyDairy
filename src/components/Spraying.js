@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
 
-function Spraying() {
+function Spraying(props) {
   const data = [
     {
       value: 0,
@@ -25,11 +25,12 @@ function Spraying() {
     },
     {
       value: 5,
-      label: "Plant growth Regulator"
+      label: "Plant Growth Regulator"
     }
   ];
 
   const [val, setVal] = useState(0);
+  const handleSelectedType = props.handleSelectedType;
 
   // handle onChange event of the dropdown
   // function handleChange(e) {
@@ -45,6 +46,7 @@ function Spraying() {
   }
 
   const handleChange = (e) => {
+    handleSelectedType(e.label);
     console.log(e);
     setVal(e.value);
     // console.log(val);
