@@ -32,15 +32,6 @@ function Spraying(props) {
   const [val, setVal] = useState(0);
   const handleSelectedType = props.handleSelectedType;
 
-  // handle onChange event of the dropdown
-  // function handleChange(e) {
-  //   const selected = e.value;
-  //   console.log(e.label);
-  //   console.log(selected);
-  //   setVal(selected);
-  //   console.log(val);
-  // }
-
   function later() {
     console.log(val);
   }
@@ -49,7 +40,6 @@ function Spraying(props) {
     handleSelectedType(e.label);
     console.log(e);
     setVal(e.value);
-    // console.log(val);
     later();
   };
 
@@ -58,10 +48,9 @@ function Spraying(props) {
       <Select
         className="reactSelect"
         placeholder="Select Option"
-        value={data.find((obj) => obj.value === val)} // set selected value
-        // value={data[val].label}
-        options={data} // set list of the data
-        onChange={handleChange} // assign onChange function
+        value={data.find((obj) => obj.value === val)}
+        options={data}
+        onChange={handleChange}
       />
     </div>
   );

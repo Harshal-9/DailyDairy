@@ -16,7 +16,6 @@ function UploadImg() {
           name="uploadedFile"
           accept="image/*"
         />
-        {/* <input style={{ display: "inline-block" }} type="submit" /> */}
       </form>
     </div>
   );

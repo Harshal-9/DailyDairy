@@ -45,8 +45,8 @@ function SetMaintenance() {
     <Select
       placeholder="Select Option"
       value={val}
-      options={data} // set list of the data
-      onChange={handleChange} // assign onChange function
+      options={data}
+      onChange={handleChange}
     />
   );
 }

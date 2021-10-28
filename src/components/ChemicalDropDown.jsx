@@ -208,25 +208,10 @@ function ChemicalDropDown(props) {
   }
 
   const handleChange = (e) => {
-    // setVal(e.label);
     console.log(e.label);
   };
 
-  return (
-    <Select
-      // placeholder="Select Option"
-      // value={val}
-      options={getArray()} // set list of the data
-      onChange={handleChange} // assign onChange function
-    />
-  );
+  return <Select options={getArray()} onChange={handleChange} />;
 }
 
 export default ChemicalDropDown;
-// export {
-//   fertilizerData,
-//   fungicideData,
-//   insectcideData,
-//   organicData,
-//   plantGrowthRegulatorData
-// };

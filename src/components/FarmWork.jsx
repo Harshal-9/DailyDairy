@@ -71,18 +71,15 @@ function FarmWork() {
 
   // const [val, setVal] = useState("default");
 
-  // handle onChange event of the dropdown
   const handleChange = (e) => {
-    // setVal(e.label);
     console.log(e.label);
   };
 
   return (
     <Select
       placeholder="Select Option"
-      // value={val}
-      options={data} // set list of the data
-      onChange={handleChange} // assign onChange function
+      options={data}
+      onChange={handleChange}
     />
   );
 }
