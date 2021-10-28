@@ -17,7 +17,9 @@ function Dropdown(props) {
   function getFromSoilTable(data) {
     console.log(data);
   }
-
+  function getFromFertilizerTable(data) {
+    console.log(data);
+  }
   return (
     <table className="myTable" style={{ textAlign: "center" }}>
       <tbody>
@@ -30,7 +32,9 @@ function Dropdown(props) {
 
           {props.type === 2 ? (
             <div>
-              <FertilizerTable />
+              <FertilizerTable
+                getFromFertilizerTable={getFromFertilizerTable}
+              />
             </div>
           ) : null}
 

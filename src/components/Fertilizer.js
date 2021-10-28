@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Select from "react-select";
 
-function SetFertilizer() {
+function SetFertilizer(props) {
+  const func = props.getFertilizerData;
+  const rowNo = props.rowNo;
+  const columnNo = props.columnNo;
   const data = [
     { value: 1, label: "Calcium Nitrate/Calcium Nitrobar" },
     { value: 2, label: "Magnecium Sulphate" },
@@ -24,18 +27,13 @@ function SetFertilizer() {
     { value: 19, label: "Pend/Gandulkhat" }
   ];
 
-  const [val, setVal] = useState("default");
-
-  // handle onChange event of the dropdown
   const handleChange = (e) => {
-    setVal(e.label);
-    console.log(e.label);
+    func({ FertilizerWork: e.label, RowNo: rowNo, ColumnNo: columnNo });
   };
 
   return (
     <Select
       placeholder="Select Option"
-      value={val}
       options={data}
       onChange={handleChange}
     />
