@@ -1,7 +1,10 @@
 import React from "react";
 import Select from "react-select";
 
-function SoilWork() {
+function SoilWork(props) {
+  const func = props.getSoilData;
+  const rowNo = props.rowNo;
+  const columnNo = props.columnNo;
   const data = [
     {
       value: 0,
@@ -29,10 +32,8 @@ function SoilWork() {
     }
   ];
 
-  // const [val, setVal] = useState("default");
-
   const handleChange = (e) => {
-    console.log(e.label);
+    func({ soilWork: e.label, RowNo: rowNo, ColumnNo: columnNo });
   };
 
   return (

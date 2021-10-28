@@ -14,6 +14,10 @@ function Dropdown(props) {
     console.log(data);
   }
 
+  function getFromSoilTable(data) {
+    console.log(data);
+  }
+
   return (
     <table className="myTable" style={{ textAlign: "center" }}>
       <tbody>
@@ -38,7 +42,7 @@ function Dropdown(props) {
 
           {props.type === 4 ? (
             <div>
-              <SoilWorkTable />
+              <SoilWorkTable getFromSoilTable={getFromSoilTable} />
             </div>
           ) : null}
 
