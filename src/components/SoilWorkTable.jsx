@@ -2,7 +2,65 @@ import React from "react";
 import SoilWork from "./SoilWork";
 import UploadImg from "./UploadImg";
 
-function SoilWorkTable() {
+function SoilWorkTable(props) {
+  const getFromSoilTable = props.getFromSoilTable;
+  var obtainedData = { row1: {}, row2: {}, row3: {}, row4: {}, row5: {} };
+
+  function getSoilData(data) {
+    switch (data.RowNo) {
+      case "1":
+        switch (data.ColumnNo) {
+          case "1":
+            obtainedData.row1.soilWork = data.soilWork;
+            getFromSoilTable(obtainedData);
+            break;
+
+          default:
+        }
+        break;
+      case "2":
+        switch (data.ColumnNo) {
+          case "1":
+            obtainedData.row2.soilWork = data.soilWork;
+            getFromSoilTable(obtainedData);
+            break;
+
+          default:
+        }
+        break;
+      case "3":
+        switch (data.ColumnNo) {
+          case "1":
+            obtainedData.row3.soilWork = data.soilWork;
+            getFromSoilTable(obtainedData);
+            break;
+
+          default:
+        }
+        break;
+      case "4":
+        switch (data.ColumnNo) {
+          case "1":
+            obtainedData.row4.soilWork = data.soilWork;
+            getFromSoilTable(obtainedData);
+            break;
+
+          default:
+        }
+        break;
+      case "5":
+        switch (data.ColumnNo) {
+          case "1":
+            obtainedData.row4.soilWork = data.soilWork;
+            getFromSoilTable(obtainedData);
+            break;
+
+          default:
+        }
+        break;
+      default:
+    }
+  }
   return (
     <div>
       <table>
@@ -14,22 +72,16 @@ function SoilWorkTable() {
 
         <tr>
           <td>
-            <SoilWork />
+            <SoilWork getSoilData={getSoilData} rowNo="1" columnNo="1" />
           </td>
           <td>
-            <input className="textInput"></input>
-          </td>
-          <td>
-            <UploadImg />
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <SoilWork />
-          </td>
-          <td>
-            <input className="textInput"></input>
+            <input
+              onChange={(event) => {
+                obtainedData.row1.Details = event.target.value;
+                getFromSoilTable(obtainedData);
+              }}
+              className="textInput"
+            ></input>
           </td>
           <td>
             <UploadImg />
@@ -38,22 +90,16 @@ function SoilWorkTable() {
 
         <tr>
           <td>
-            <SoilWork />
+            <SoilWork getSoilData={getSoilData} rowNo="2" columnNo="1" />
           </td>
           <td>
-            <input className="textInput"></input>
-          </td>
-          <td>
-            <UploadImg />
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-            <SoilWork />
-          </td>
-          <td>
-            <input className="textInput"></input>
+            <input
+              onChange={(event) => {
+                obtainedData.row2.Details = event.target.value;
+                getFromSoilTable(obtainedData);
+              }}
+              className="textInput"
+            ></input>
           </td>
           <td>
             <UploadImg />
@@ -62,10 +108,52 @@ function SoilWorkTable() {
 
         <tr>
           <td>
-            <SoilWork />
+            <SoilWork getSoilData={getSoilData} rowNo="3" columnNo="1" />
           </td>
           <td>
-            <input className="textInput"></input>
+            <input
+              onChange={(event) => {
+                obtainedData.row3.Details = event.target.value;
+                getFromSoilTable(obtainedData);
+              }}
+              className="textInput"
+            ></input>
+          </td>
+          <td>
+            <UploadImg />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <SoilWork getSoilData={getSoilData} rowNo="4" columnNo="1" />
+          </td>
+          <td>
+            <input
+              onChange={(event) => {
+                obtainedData.row4.Details = event.target.value;
+                getFromSoilTable(obtainedData);
+              }}
+              className="textInput"
+            ></input>
+          </td>
+          <td>
+            <UploadImg />
+          </td>
+        </tr>
+
+        <tr>
+          <td>
+            <SoilWork getSoilData={getSoilData} rowNo="5" columnNo="1" />
+          </td>
+          <td>
+            <input
+              onChange={(event) => {
+                obtainedData.row5.Details = event.target.value;
+                getFromSoilTable(obtainedData);
+              }}
+              className="textInput"
+            ></input>
           </td>
           <td>
             <UploadImg />
