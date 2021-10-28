@@ -6,6 +6,9 @@ import SoilWorkTable from "./SoilWorkTable";
 import MaintenanceTable from "./MaintenanceTable";
 
 function Dropdown(props) {
+  function getFromMaintainTable(data) {
+    console.log(data);
+  }
   return (
     <table className="myTable" style={{ textAlign: "center" }}>
       <tbody>
@@ -36,7 +39,7 @@ function Dropdown(props) {
 
           {props.type === 5 ? (
             <div>
-              <MaintenanceTable />
+              <MaintenanceTable getFromMaintainTable={getFromMaintainTable} />
             </div>
           ) : null}
         </div>

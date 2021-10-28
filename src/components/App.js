@@ -4,19 +4,53 @@ import RadioButton from "./RadioButton";
 import PlotDropdown from "./PlotDropdown";
 
 function App() {
+  // var finalData = [];
+
+  var finalDataObj = {};
+
+  function getFarmer(data) {
+    // console.log(finalData.length);
+    // console.log(finalData);
+
+    // console.log("Here : ", finalDataObj);
+
+    // console.log("Data recieved farmer : ", data);
+    // console.log(finalDataObj);
+    finalDataObj.Farmer = data;
+
+    // finalData.length = 0;
+    // finalData.push(data);
+    // console.log(finalData.length);
+    // console.log(finalDataObj);
+  }
+
+  function getPlot(data) {
+    // console.log("Data recieved plot : ", data);
+    finalDataObj.Plot = data;
+  }
+
   const key = [1, 2, 3, 4, 5];
+
   return (
     <div className="App">
       <h1 className="heading">Farmer's Digital Diary</h1>
       <hr /> <br />
-      <FarmerDropdown />
+      <FarmerDropdown getFarmer={getFarmer} />
       <br />
       <hr /> <br />
-      <PlotDropdown />
+      <PlotDropdown getPlot={getPlot} />
       <br />
       <hr /> <br />
       <label htmlFor="myDate">Select a Date : </label>
-      <input type="date" id="myDate" name="myDate" />
+      <input
+        onChange={(event) => {
+          // console.log(event.target.value);
+          finalDataObj.Date = { ProposedDate: event.target.value };
+        }}
+        type="date"
+        id="myDate"
+        name="myDate"
+      />
       <br />
       <br />
       <hr />
@@ -44,7 +78,24 @@ function App() {
       <textarea className="description" placeholder="Type here... "></textarea>
       <br />
       <hr />
-      <button className="submitButton">Submit</button>
+      <button
+        className="submitButton"
+        onClick={() => {
+          console.log("I m clicked");
+        }}
+      >
+        Submit
+      </button>
+      <br />
+      <button
+        onClick={() => {
+          // console.log(finalData.length);
+          // console.log(finalData);
+          console.log(finalDataObj);
+        }}
+      >
+        Print
+      </button>
     </div>
   );
 }
