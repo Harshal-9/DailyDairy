@@ -8,7 +8,6 @@ function SprayingTable() {
 
   function handleSelectedType(gotSelected) {
     setSelectedType(gotSelected);
-    // console.log("Here : " + gotSelected);
   }
 
   return (

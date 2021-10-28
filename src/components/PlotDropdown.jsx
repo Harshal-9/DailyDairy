@@ -28,7 +28,6 @@ function PlotDropdown() {
 
   const [val, setVal] = useState("default");
 
-  // handle onChange event of the dropdown
   const handleChange = (opt) => {
     setVal(opt.value);
     console.log(opt.label, opt.value);
