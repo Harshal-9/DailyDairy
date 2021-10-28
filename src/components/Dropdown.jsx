@@ -9,6 +9,11 @@ function Dropdown(props) {
   function getFromMaintainTable(data) {
     console.log(data);
   }
+
+  function getFromFarmWorkTable(data) {
+    console.log(data);
+  }
+
   return (
     <table className="myTable" style={{ textAlign: "center" }}>
       <tbody>
@@ -27,7 +32,7 @@ function Dropdown(props) {
 
           {props.type === 3 ? (
             <div>
-              <FarmWorkTable />
+              <FarmWorkTable getFromFarmWorkTable={getFromFarmWorkTable} />
             </div>
           ) : null}
 

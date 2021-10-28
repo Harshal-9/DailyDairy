@@ -1,7 +1,11 @@
 import React from "react";
 import Select from "react-select";
 
-function FarmWork() {
+function FarmWork(props) {
+  const func = props.getFarmWorkData;
+  const rowNo = props.rowNo;
+  const columnNo = props.columnNo;
+
   const data = [
     {
       value: 0,
@@ -69,18 +73,13 @@ function FarmWork() {
     }
   ];
 
-  // const [val, setVal] = useState("default");
-
   const handleChange = (e) => {
-    console.log(e.label);
+    // console.log(e.label);
+    func({ FarmWork: e.label, RowNo: rowNo, ColumnNo: columnNo });
   };
 
   return (
-    <Select
-      placeholder="Select Option"
-      options={data}
-      onChange={handleChange}
-    />
+    <Select defaultValue={data[0]} options={data} onChange={handleChange} />
   );
 }
 
