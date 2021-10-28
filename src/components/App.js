@@ -4,24 +4,10 @@ import RadioButton from "./RadioButton";
 import PlotDropdown from "./PlotDropdown";
 
 function App() {
-  // var finalData = [];
-
   var finalDataObj = {};
 
   function getFarmer(data) {
-    // console.log(finalData.length);
-    // console.log(finalData);
-
-    // console.log("Here : ", finalDataObj);
-
-    // console.log("Data recieved farmer : ", data);
-    // console.log(finalDataObj);
     finalDataObj.Farmer = data;
-
-    // finalData.length = 0;
-    // finalData.push(data);
-    // console.log(finalData.length);
-    // console.log(finalDataObj);
   }
 
   function getPlot(data) {
@@ -75,7 +61,13 @@ function App() {
       <br />
       <hr />
       <h3>Any other work to be done?</h3>
-      <textarea className="description" placeholder="Type here... "></textarea>
+      <textarea
+        onChange={(event) => {
+          finalDataObj.Notes = { Notes: event.target.value };
+        }}
+        className="description"
+        placeholder="Type here... "
+      ></textarea>
       <br />
       <hr />
       <button
@@ -89,8 +81,6 @@ function App() {
       <br />
       <button
         onClick={() => {
-          // console.log(finalData.length);
-          // console.log(finalData);
           console.log(finalDataObj);
         }}
       >
