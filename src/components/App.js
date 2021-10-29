@@ -11,11 +11,39 @@ function App() {
   }
 
   function getPlot(data) {
-    // console.log("Data recieved plot : ", data);
     finalDataObj.Plot = data;
   }
 
   const key = [1, 2, 3, 4, 5];
+
+  function getFromRadio(data) {
+    // console.log("In App : ", data);
+    // console.log(data.type);
+
+    switch (data.Type) {
+      case 1:
+        finalDataObj.Spraying = data.Data;
+        break;
+
+      case 2:
+        finalDataObj.Fertilizer = data.Data;
+        break;
+
+      case 3:
+        finalDataObj.FarmWork = data.Data;
+        break;
+
+      case 4:
+        finalDataObj.SoilWork = data.Data;
+        break;
+
+      case 5:
+        finalDataObj.Maintenance = data.Data;
+        break;
+
+      default:
+    }
+  }
 
   return (
     <div className="App">
@@ -41,26 +69,27 @@ function App() {
       <br />
       <hr />
       <h3>Was any spraying done today?</h3>
-      <RadioButton type={key[0]} />
+      <RadioButton type={key[0]} getFromRadio={getFromRadio} />
       <br />
       <hr />
       <h3>Was any fertilization + irrigation done today?</h3>
-      <RadioButton type={key[1]} />
+      <RadioButton type={key[1]} getFromRadio={getFromRadio} />
       <br />
       <hr />
       <h3>Was any work done in farm?</h3>
-      <RadioButton type={key[2]} />
+      <RadioButton type={key[2]} getFromRadio={getFromRadio} />
       <br />
       <hr />
       <h3>Any soil work done today?</h3>
-      <RadioButton type={key[3]} />
+      <RadioButton type={key[3]} getFromRadio={getFromRadio} />
       <br />
       <hr />
       <h3>Any maintenance work done today?</h3>
-      <RadioButton type={key[4]} />
+      <RadioButton type={key[4]} getFromRadio={getFromRadio} />
       <br />
       <hr />
       <h3>Any other work to be done?</h3>
+      <br />
       <textarea
         onChange={(event) => {
           finalDataObj.Notes = { Notes: event.target.value };
@@ -74,18 +103,12 @@ function App() {
         className="submitButton"
         onClick={() => {
           console.log("I m clicked");
+          console.log(finalDataObj);
         }}
       >
         Submit
       </button>
       <br />
-      <button
-        onClick={() => {
-          console.log(finalDataObj);
-        }}
-      >
-        Print
-      </button>
     </div>
   );
 }

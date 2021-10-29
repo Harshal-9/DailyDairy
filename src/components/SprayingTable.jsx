@@ -4,6 +4,8 @@ import UploadImg from "./UploadImg";
 import ChemicalDropDown from "./ChemicalDropDown";
 
 function SprayingTable(props) {
+  // console.log("Spraying Table called");
+
   const [selectedType, setSelectedType] = useState("none");
 
   function handleSelectedType(gotSelected) {

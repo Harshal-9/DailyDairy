@@ -191,7 +191,7 @@ function ChemicalDropDown(props) {
   const rowNo = props.rowNo;
   const columnNo = props.columnNo;
 
-  console.log(selectedType);
+  // console.log(selectedType);
 
   function getArray() {
     switch (selectedType) {
