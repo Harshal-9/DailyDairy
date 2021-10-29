@@ -6,6 +6,7 @@ function SetFertilizer(props) {
   const rowNo = props.rowNo;
   const columnNo = props.columnNo;
   const data = [
+    { value: 0, label: "None" },
     { value: 1, label: "Calcium Nitrate/Calcium Nitrobar" },
     { value: 2, label: "Magnecium Sulphate" },
     { value: 3, label: "Boron" },
@@ -32,11 +33,7 @@ function SetFertilizer(props) {
   };
 
   return (
-    <Select
-      placeholder="Select Option"
-      options={data}
-      onChange={handleChange}
-    />
+    <Select defaultValue={data[0]} options={data} onChange={handleChange} />
   );
 }
 

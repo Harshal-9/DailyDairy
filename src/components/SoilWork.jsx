@@ -37,11 +37,7 @@ function SoilWork(props) {
   };
 
   return (
-    <Select
-      placeholder="Select Option"
-      options={data}
-      onChange={handleChange}
-    />
+    <Select defaultValue={data[0]} options={data} onChange={handleChange} />
   );
 }
 
