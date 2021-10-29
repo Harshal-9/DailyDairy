@@ -6,6 +6,10 @@ import SoilWorkTable from "./SoilWorkTable";
 import MaintenanceTable from "./MaintenanceTable";
 
 function Dropdown(props) {
+  function getFromSprayingTable(data) {
+    console.log(data);
+  }
+
   function getFromMaintainTable(data) {
     console.log(data);
   }
@@ -17,6 +21,7 @@ function Dropdown(props) {
   function getFromSoilTable(data) {
     console.log(data);
   }
+
   function getFromFertilizerTable(data) {
     console.log(data);
   }
@@ -26,7 +31,7 @@ function Dropdown(props) {
         <div>
           {props.type === 1 ? (
             <div>
-              <SprayingTable />
+              <SprayingTable getFromSprayingTable={getFromSprayingTable} />
             </div>
           ) : null}
 

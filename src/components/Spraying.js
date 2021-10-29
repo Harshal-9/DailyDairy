@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Select from "react-select";
 
 function Spraying(props) {
+  const func = props.getSprayingData;
+  const rowNo = props.rowNo;
+  const columnNo = props.columnNo;
+
   const data = [
     {
       value: 0,
@@ -29,26 +33,18 @@ function Spraying(props) {
     }
   ];
 
-  const [val, setVal] = useState(0);
   const handleSelectedType = props.handleSelectedType;
 
-  function later() {
-    console.log(val);
-  }
-
   const handleChange = (e) => {
+    func({ SprayingType: e.label, RowNo: rowNo, ColumnNo: columnNo });
     handleSelectedType(e.label);
-    console.log(e);
-    setVal(e.value);
-    later();
   };
 
   return (
     <div>
       <Select
+        defaultValue={data[0]}
         className="reactSelect"
-        placeholder="Select Option"
-        value={data.find((obj) => obj.value === val)}
         options={data}
         onChange={handleChange}
       />

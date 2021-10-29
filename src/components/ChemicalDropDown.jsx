@@ -2,7 +2,7 @@ import React from "react";
 import Select from "react-select";
 
 const fertilizerData = [
-  { value: 0, label: "none" },
+  { value: 0, label: "None" },
   { value: 1, label: "Calcium" },
   { value: 2, label: "Policarb Ca" },
   { value: 3, label: "Calcium + Magnesium" },
@@ -187,6 +187,11 @@ const plantGrowthRegulatorData = [
 
 function ChemicalDropDown(props) {
   const selectedType = props.selectedType;
+  const func = props.getSprayingData;
+  const rowNo = props.rowNo;
+  const columnNo = props.columnNo;
+
+  console.log(selectedType);
 
   function getArray() {
     switch (selectedType) {
@@ -208,10 +213,16 @@ function ChemicalDropDown(props) {
   }
 
   const handleChange = (e) => {
-    console.log(e.label);
+    func({ Chemical: e.label, RowNo: rowNo, ColumnNo: columnNo });
   };
 
-  return <Select options={getArray()} onChange={handleChange} />;
+  return (
+    <Select
+      defaultValue={fertilizerData[0]}
+      options={getArray()}
+      onChange={handleChange}
+    />
+  );
 }
 
 export default ChemicalDropDown;
