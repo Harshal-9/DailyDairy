@@ -10,7 +10,7 @@ function UploadImg(props) {
 
   switch (props.fromWhat) {
     case "SprayingTable":
-      funcTosendLink = props.getMaintenanceData;
+      funcTosendLink = props.getSprayingData;
       break;
 
     case "FertilizerTable":

@@ -42,6 +42,10 @@ function SprayingTable(props) {
             break;
 
           default:
+            prevData = obtainedData;
+            prevData.row1.ImageLink = data.link;
+            setObtainedData(prevData);
+            getFromSprayingTable(obtainedData);
         }
         break;
 
@@ -62,6 +66,10 @@ function SprayingTable(props) {
             break;
 
           default:
+            prevData = obtainedData;
+            prevData.row2.ImageLink = data.link;
+            setObtainedData(prevData);
+            getFromSprayingTable(obtainedData);
         }
         break;
 
@@ -82,6 +90,10 @@ function SprayingTable(props) {
             break;
 
           default:
+            prevData = obtainedData;
+            prevData.row3.ImageLink = data.link;
+            setObtainedData(prevData);
+            getFromSprayingTable(obtainedData);
         }
         break;
 
@@ -102,6 +114,10 @@ function SprayingTable(props) {
             break;
 
           default:
+            prevData = obtainedData;
+            prevData.row4.ImageLink = data.link;
+            setObtainedData(prevData);
+            getFromSprayingTable(obtainedData);
         }
         break;
 
@@ -122,6 +138,10 @@ function SprayingTable(props) {
             break;
 
           default:
+            prevData = obtainedData;
+            prevData.row5.ImageLink = data.link;
+            setObtainedData(prevData);
+            getFromSprayingTable(obtainedData);
         }
         break;
 
@@ -166,7 +186,12 @@ function SprayingTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getSprayingData={getSprayingData}
+              fromWhat="SprayingTable"
+              rowNo="1"
+              columnNo="3"
+            />
           </td>
         </tr>
 
@@ -197,7 +222,12 @@ function SprayingTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getSprayingData={getSprayingData}
+              fromWhat="SprayingTable"
+              rowNo="2"
+              columnNo="3"
+            />
           </td>
         </tr>
 
@@ -228,7 +258,12 @@ function SprayingTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getSprayingData={getSprayingData}
+              fromWhat="SprayingTable"
+              rowNo="3"
+              columnNo="3"
+            />
           </td>
         </tr>
 
@@ -259,7 +294,12 @@ function SprayingTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getSprayingData={getSprayingData}
+              fromWhat="SprayingTable"
+              rowNo="4"
+              columnNo="3"
+            />
           </td>
         </tr>
 
@@ -290,7 +330,12 @@ function SprayingTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getSprayingData={getSprayingData}
+              fromWhat="SprayingTable"
+              rowNo="5"
+              columnNo="3"
+            />
           </td>
         </tr>
       </table>

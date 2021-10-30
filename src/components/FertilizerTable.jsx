@@ -17,6 +17,8 @@ function FertilizerTable(props) {
             break;
 
           default:
+            obtainedData.row1.ImageLink = data.link;
+            getFromFertilizerTable(obtainedData);
         }
         break;
 
@@ -28,6 +30,8 @@ function FertilizerTable(props) {
             break;
 
           default:
+            obtainedData.row2.ImageLink = data.link;
+            getFromFertilizerTable(obtainedData);
         }
         break;
 
@@ -39,6 +43,8 @@ function FertilizerTable(props) {
             break;
 
           default:
+            obtainedData.row3.ImageLink = data.link;
+            getFromFertilizerTable(obtainedData);
         }
         break;
 
@@ -50,6 +56,8 @@ function FertilizerTable(props) {
             break;
 
           default:
+            obtainedData.row4.ImageLink = data.link;
+            getFromFertilizerTable(obtainedData);
         }
         break;
 
@@ -61,12 +69,13 @@ function FertilizerTable(props) {
             break;
 
           default:
+            obtainedData.row5.ImageLink = data.link;
+            getFromFertilizerTable(obtainedData);
         }
         break;
 
       default:
     }
-    // obtainedData.MaintainData = data;
   }
   return (
     <div>
@@ -107,7 +116,12 @@ function FertilizerTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getFertilizerData={getFertilizerData}
+              fromWhat="FertilizerTable"
+              rowNo="1"
+              columnNo="2"
+            />
           </td>
         </tr>
 
@@ -129,7 +143,12 @@ function FertilizerTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getFertilizerData={getFertilizerData}
+              fromWhat="FertilizerTable"
+              rowNo="2"
+              columnNo="2"
+            />
           </td>
         </tr>
 
@@ -151,7 +170,12 @@ function FertilizerTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getFertilizerData={getFertilizerData}
+              fromWhat="FertilizerTable"
+              rowNo="3"
+              columnNo="2"
+            />
           </td>
         </tr>
 
@@ -173,7 +197,12 @@ function FertilizerTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getFertilizerData={getFertilizerData}
+              fromWhat="FertilizerTable"
+              rowNo="4"
+              columnNo="2"
+            />
           </td>
         </tr>
 
@@ -195,7 +224,12 @@ function FertilizerTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getFertilizerData={getFertilizerData}
+              fromWhat="FertilizerTable"
+              rowNo="5"
+              columnNo="2"
+            />
           </td>
         </tr>
       </table>
