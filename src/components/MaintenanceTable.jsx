@@ -17,6 +17,8 @@ function MaintenanceTable(props) {
             break;
 
           default:
+            obtainedData.row1.ImageLink = data.link;
+            getFromMaintainTable(obtainedData);
         }
         break;
 
@@ -28,6 +30,8 @@ function MaintenanceTable(props) {
             break;
 
           default:
+            obtainedData.row2.ImageLink = data.link;
+            getFromMaintainTable(obtainedData);
         }
         break;
 
@@ -39,6 +43,8 @@ function MaintenanceTable(props) {
             break;
 
           default:
+            obtainedData.row3.ImageLink = data.link;
+            getFromMaintainTable(obtainedData);
         }
         break;
 
@@ -50,6 +56,8 @@ function MaintenanceTable(props) {
             break;
 
           default:
+            obtainedData.row4.ImageLink = data.link;
+            getFromMaintainTable(obtainedData);
         }
         break;
 
@@ -61,6 +69,8 @@ function MaintenanceTable(props) {
             break;
 
           default:
+            obtainedData.row5.ImageLink = data.link;
+            getFromMaintainTable(obtainedData);
         }
         break;
 
@@ -96,7 +106,12 @@ function MaintenanceTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getMaintenanceData={getMaintenanceData}
+              fromWhat="MaintenanceTable"
+              rowNo="1"
+              columnNo="2"
+            />
           </td>
         </tr>
 
@@ -118,7 +133,12 @@ function MaintenanceTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getMaintenanceData={getMaintenanceData}
+              fromWhat="MaintenanceTable"
+              rowNo="2"
+              columnNo="2"
+            />
           </td>
         </tr>
 
@@ -140,7 +160,12 @@ function MaintenanceTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getMaintenanceData={getMaintenanceData}
+              fromWhat="MaintenanceTable"
+              rowNo="3"
+              columnNo="2"
+            />
           </td>
         </tr>
 
@@ -162,7 +187,12 @@ function MaintenanceTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getMaintenanceData={getMaintenanceData}
+              fromWhat="MaintenanceTable"
+              rowNo="4"
+              columnNo="2"
+            />
           </td>
         </tr>
 
@@ -184,7 +214,12 @@ function MaintenanceTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getMaintenanceData={getMaintenanceData}
+              fromWhat="MaintenanceTable"
+              rowNo="5"
+              columnNo="2"
+            />
           </td>
         </tr>
       </table>

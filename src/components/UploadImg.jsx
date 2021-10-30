@@ -1,13 +1,39 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-function UploadImg() {
-  const [metadata, setMetadata] = useState(null);
+function UploadImg(props) {
+  // Handling functional props for passing the link
 
-  // printing the link
-  function printLink() {
-    console.log("link", metadata.link);
+  var funcTosendLink;
+  var rowNo = props.rowNo;
+  var columnNo = props.columnNo;
+
+  switch (props.fromWhat) {
+    case "SprayingTable":
+      funcTosendLink = props.getMaintenanceData;
+      break;
+
+    case "FertilizerTable":
+      funcTosendLink = props.getFertilizerData;
+      break;
+
+    case "FarmWorkTable":
+      funcTosendLink = props.getFarmWorkData;
+      break;
+
+    case "SoilWorkTable":
+      funcTosendLink = props.getSoilData;
+      break;
+
+    case "MaintenanceTable":
+      funcTosendLink = props.getMaintenanceData;
+      break;
+
+    default:
   }
+
+  // ---------------------------------------
+  const [metadata, setMetadata] = useState(null);
 
   const handleFileChange = (event) => {
     // console.log(event.target.files[0]);
@@ -15,22 +41,28 @@ function UploadImg() {
     const fd = new FormData();
     fd.append("image", selectedFile, selectedFile.name);
 
-    // Uploading Image
+    // Getting link of uploaded image
     axios
       .post("http://localhost:3000", fd)
       .then((res) => {
         console.log("result", res);
         console.log(res.data.link);
-
+        alert("File uploaded " + selectedFile.name);
         setMetadata({ link: res.data.link, id: res.data.id });
-        printLink();
+        // printLink();
+        funcTosendLink({
+          link: res.data.link,
+          RowNo: rowNo,
+          ColumnNo: columnNo
+        }); //sending link to higher level
       })
       .catch((err) => {
         console.log("error", err);
       });
   };
 
-  // Handling deleting Image
+  // Deleting image
+
   function handleDelete() {
     axios
       .delete("http://localhost:3000/", {
@@ -40,9 +72,10 @@ function UploadImg() {
       })
       .then((res) => {
         console.log(res);
+        setMetadata(null);
       })
       .catch((err) => {
-        console.log(err);
+        console.log("Error here : ", err);
       });
   }
 
