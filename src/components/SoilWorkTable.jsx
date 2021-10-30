@@ -16,6 +16,8 @@ function SoilWorkTable(props) {
             break;
 
           default:
+            obtainedData.row1.ImageLink = data.link;
+            getFromSoilTable(obtainedData);
         }
         break;
       case "2":
@@ -26,6 +28,8 @@ function SoilWorkTable(props) {
             break;
 
           default:
+            obtainedData.row2.ImageLink = data.link;
+            getFromSoilTable(obtainedData);
         }
         break;
       case "3":
@@ -36,6 +40,8 @@ function SoilWorkTable(props) {
             break;
 
           default:
+            obtainedData.row3.ImageLink = data.link;
+            getFromSoilTable(obtainedData);
         }
         break;
       case "4":
@@ -46,6 +52,8 @@ function SoilWorkTable(props) {
             break;
 
           default:
+            obtainedData.row4.ImageLink = data.link;
+            getFromSoilTable(obtainedData);
         }
         break;
       case "5":
@@ -56,6 +64,8 @@ function SoilWorkTable(props) {
             break;
 
           default:
+            obtainedData.row5.ImageLink = data.link;
+            getFromSoilTable(obtainedData);
         }
         break;
       default:
@@ -84,7 +94,12 @@ function SoilWorkTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getSoilData={getSoilData}
+              fromWhat="SoilWorkTable"
+              rowNo="1"
+              columnNo="2"
+            />
           </td>
         </tr>
 
@@ -102,7 +117,12 @@ function SoilWorkTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getSoilData={getSoilData}
+              fromWhat="SoilWorkTable"
+              rowNo="2"
+              columnNo="2"
+            />
           </td>
         </tr>
 
@@ -120,7 +140,12 @@ function SoilWorkTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getSoilData={getSoilData}
+              fromWhat="SoilWorkTable"
+              rowNo="3"
+              columnNo="2"
+            />
           </td>
         </tr>
 
@@ -138,7 +163,12 @@ function SoilWorkTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getSoilData={getSoilData}
+              fromWhat="SoilWorkTable"
+              rowNo="4"
+              columnNo="2"
+            />
           </td>
         </tr>
 
@@ -156,7 +186,12 @@ function SoilWorkTable(props) {
             ></input>
           </td>
           <td>
-            <UploadImg />
+            <UploadImg
+              getSoilData={getSoilData}
+              fromWhat="SoilWorkTable"
+              rowNo="5"
+              columnNo="2"
+            />
           </td>
         </tr>
       </table>
