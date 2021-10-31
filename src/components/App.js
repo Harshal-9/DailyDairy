@@ -108,7 +108,7 @@ function App() {
               <button
                 className="submitButton"
                 onClick={() => {
-                  console.log("I m clicked");
+                  console.log("Form submitted");
                   console.log(finalDataObj);
 
                   // fetch("http://localhost:8000/blogs", {
@@ -124,7 +124,6 @@ function App() {
               </button>
             </Link>
             <br />
-            {/* <Success /> */}
           </div>
         </Route>
         <Route exact path="/Success">

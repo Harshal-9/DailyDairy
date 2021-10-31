@@ -47,7 +47,7 @@ function UploadImg(props) {
       .then((res) => {
         console.log("result", res);
         console.log(res.data.link);
-        alert("File uploaded " + selectedFile.name);
+        alert("File : " + selectedFile.name + " uploaded successfully !");
         setMetadata({ link: res.data.link, id: res.data.id });
         // printLink();
         funcTosendLink({
@@ -73,6 +73,11 @@ function UploadImg(props) {
       .then((res) => {
         console.log(res);
         setMetadata(null);
+        funcTosendLink({
+          link: "",
+          RowNo: rowNo,
+          ColumnNo: columnNo
+        });
       })
       .catch((err) => {
         console.log("Error here : ", err);
