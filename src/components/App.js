@@ -1,19 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import FarmerDropdown from "./FarmerDropdown";
 import RadioButton from "./RadioButton";
 import PlotDropdown from "./PlotDropdown";
 import Success from "./Success";
-import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Redirect
+} from "react-router-dom";
 
 function App() {
-  var finalDataObj = {};
+  var temp;
+
+  const [finalDataObj, setFinalDataObj] = useState({
+    Farmer: { FarmerId: "" },
+    Plot: { PlotID: "" },
+    Date: { ProposedDate: "" }
+  });
+
+  const [isvalid, setValid] = useState(false);
 
   function getFarmer(data) {
-    finalDataObj.Farmer = data;
+    temp = finalDataObj;
+    temp.Farmer = data;
+    setFinalDataObj(temp);
   }
 
   function getPlot(data) {
-    finalDataObj.Plot = data;
+    temp = finalDataObj;
+    temp.Plot = data;
+    setFinalDataObj(temp);
   }
 
   const key = [1, 2, 3, 4, 5];
@@ -24,23 +41,33 @@ function App() {
 
     switch (data.Type) {
       case 1:
-        finalDataObj.Spraying = data.Data;
+        temp = finalDataObj;
+        temp.Spraying = data.Data;
+        setFinalDataObj(temp);
         break;
 
       case 2:
-        finalDataObj.Fertilizer = data.Data;
+        temp = finalDataObj;
+        temp.Fertilizer = data.Data;
+        setFinalDataObj(temp);
         break;
 
       case 3:
-        finalDataObj.FarmWork = data.Data;
+        temp = finalDataObj;
+        temp.FarmWork = data.Data;
+        setFinalDataObj(temp);
         break;
 
       case 4:
-        finalDataObj.SoilWork = data.Data;
+        temp = finalDataObj;
+        temp.SoilWork = data.Data;
+        setFinalDataObj(temp);
         break;
 
       case 5:
-        finalDataObj.Maintenance = data.Data;
+        temp = finalDataObj;
+        temp.Maintenance = data.Data;
+        setFinalDataObj(temp);
         break;
 
       default:
@@ -104,12 +131,27 @@ function App() {
             ></textarea>
             <br />
             <hr />
-            <Link to="/Success">
-              <button
-                className="submitButton"
-                onClick={() => {
+            <button
+              className="submitButton"
+              onClick={() => {
+                // console.log(finalDataObj);
+
+                if (
+                  finalDataObj.Farmer.FarmerId === "" ||
+                  finalDataObj.Plot.PlotID === "" ||
+                  finalDataObj.Date.ProposedDate === ""
+                ) {
+                  alert("Select Plot,Farmer and Date !");
+                  // window.location.href = "/";
+                  // return <Redirect to="/" />;
+                  setValid(false);
+                } else {
                   console.log("Form submitted");
                   console.log(finalDataObj);
+
+                  setValid(true);
+                  // window.location.href = "/Success";
+                  // return <Redirect to="/Success" />;
 
                   // fetch("http://localhost:8000/blogs", {
                   //   method: "POST",
@@ -118,15 +160,16 @@ function App() {
                   // }).then(() => {
                   //   console.log("posted !");
                   // });
-                }}
-              >
-                Submit
-              </button>
-            </Link>
+                }
+              }}
+            >
+              Submit
+            </button>
             <br />
+            {isvalid ? <Redirect to="/Success" /> : null}
           </div>
         </Route>
-        <Route exact path="/Success">
+        <Route path="/Success">
           <Success />
         </Route>
       </Switch>
