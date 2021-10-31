@@ -183,6 +183,7 @@ function SprayingTable(props) {
                 getFromSprayingTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
@@ -219,6 +220,7 @@ function SprayingTable(props) {
                 getFromSprayingTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
@@ -255,6 +257,7 @@ function SprayingTable(props) {
                 getFromSprayingTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
@@ -291,6 +294,7 @@ function SprayingTable(props) {
                 getFromSprayingTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
@@ -327,6 +331,7 @@ function SprayingTable(props) {
                 getFromSprayingTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>

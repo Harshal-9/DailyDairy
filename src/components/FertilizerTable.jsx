@@ -88,6 +88,7 @@ function FertilizerTable(props) {
           getFromFertilizerTable(obtainedData);
         }}
         style={{ display: "inline-block" }}
+        type="number"
       ></input>
       <br />
 
@@ -113,6 +114,7 @@ function FertilizerTable(props) {
                 getFromFertilizerTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
@@ -140,6 +142,7 @@ function FertilizerTable(props) {
                 getFromFertilizerTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
@@ -167,6 +170,7 @@ function FertilizerTable(props) {
                 getFromFertilizerTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
@@ -194,6 +198,7 @@ function FertilizerTable(props) {
                 getFromFertilizerTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
@@ -221,6 +226,7 @@ function FertilizerTable(props) {
                 getFromFertilizerTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>

@@ -91,6 +91,7 @@ function SoilWorkTable(props) {
                 getFromSoilTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
@@ -114,6 +115,7 @@ function SoilWorkTable(props) {
                 getFromSoilTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
@@ -137,6 +139,7 @@ function SoilWorkTable(props) {
                 getFromSoilTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
@@ -160,6 +163,7 @@ function SoilWorkTable(props) {
                 getFromSoilTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
@@ -183,6 +187,7 @@ function SoilWorkTable(props) {
                 getFromSoilTable(obtainedData);
               }}
               className="textInput"
+              type="number"
             ></input>
           </td>
           <td>
