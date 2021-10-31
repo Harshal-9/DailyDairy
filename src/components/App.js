@@ -104,6 +104,7 @@ function App() {
         onClick={() => {
           console.log("I m clicked");
           console.log(finalDataObj);
+          console.log("Pagal Nikhil");
 
           // fetch("http://localhost:8000/blogs", {
           //   method: "POST",
