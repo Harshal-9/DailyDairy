@@ -1,16 +1,29 @@
 import Select from "react-select";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 function FarmerDropdown(props) {
-  const aquaticCreatures = [
-    { label: "None", value: 0 },
-    { label: "Shark", value: 1 },
-    { label: "Dolphin", value: 2 },
-    { label: "Whale", value: 3 },
-    { label: "Octopus", value: 4 },
-    { label: "Crab", value: 5 },
-    { label: "Lobster", value: 6 }
-  ];
+  const [Farmers, setFarmers] = useState([
+    { farmerID: "None", plot: [], farmerName: "None" }
+  ]);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3000/farmers")
+      .then((res) => {
+        // console.log("Here : ", res.data);
+        let Data = [...res.data];
+        // for (let i = 0; i < Data.length; i++) {
+        //   console.log(Data[i]);
+        //   Farmers.push(Data[i]);
+        // }
+        console.log(Data);
+        setFarmers(Data);
+      })
+      .catch((err) => {
+        console.log("err", err);
+      });
+  }, []);
 
   const getFarmer = props.getFarmer;
 
@@ -20,17 +33,14 @@ function FarmerDropdown(props) {
     <div>
       <label htmlFor="farmerdd">Select Farmer : </label>
       <Select
-        defaultValue={aquaticCreatures[0]}
+        // defaultValue={aquaticCreatures[0]}
         id="farmerdd"
         className="farmerDrop"
-        options={aquaticCreatures}
+        options={Farmers}
+        getOptionLabel={(option) => option.farmerName}
+        getOptionValue={(option) => option.farmerID}
         onChange={(opt) => {
-          // setLastSelectedFarmer(opt.label);
-          // console.log(opt.label, opt.value);
-          // console.log("Last Selected : ", lastSelectedFarmer);
-          // getFarmer(lastSelectedFarmer);
-          // console.log("Last Selected : ", opt.label);
-          getFarmer({ FarmerID: opt.label });
+          getFarmer({ FarmerID: opt.farmerID });
         }}
       />
     </div>
@@ -38,3 +48,23 @@ function FarmerDropdown(props) {
 }
 
 export default FarmerDropdown;
+
+// const aquaticCreatures = [
+//   { label: "None", value: 0 },
+//   { label: "Shark", value: 1 },
+//   { label: "Dolphin", value: 2 },
+//   { label: "Whale", value: 3 },
+//   { label: "Octopus", value: 4 },
+//   { label: "Crab", value: 5 },
+//   { label: "Lobster", value: 6 }
+// ];
+
+/* <Select
+  defaultValue={aquaticCreatures[0]}
+  id="farmerdd"
+  className="farmerDrop"
+  options={aquaticCreatures}
+  onChange={(opt) => {
+    getFarmer({ FarmerID: opt.label });
+  }}
+/>; */

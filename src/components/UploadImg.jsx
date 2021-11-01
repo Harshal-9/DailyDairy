@@ -43,7 +43,7 @@ function UploadImg(props) {
 
     // Getting link of uploaded image
     axios
-      .post("http://localhost:3000", fd)
+      .post("http://localhost:3000/uploadFile", fd)
       .then((res) => {
         console.log("result", res);
         console.log(res.data.link);
@@ -65,7 +65,7 @@ function UploadImg(props) {
 
   function handleDelete() {
     axios
-      .delete("http://localhost:3000/", {
+      .delete("http://localhost:3000/uploadFile", {
         data: {
           id: metadata.id
         }

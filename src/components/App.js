@@ -3,6 +3,8 @@ import FarmerDropdown from "./FarmerDropdown";
 import RadioButton from "./RadioButton";
 import PlotDropdown from "./PlotDropdown";
 import Success from "./Success";
+import axios from "axios";
+
 import {
   BrowserRouter as Router,
   Route,
@@ -137,19 +139,38 @@ function App() {
                 // console.log(finalDataObj);
 
                 if (
-                  finalDataObj.Farmer.FarmerId === "" ||
+                  finalDataObj.Farmer.FarmerID === "" ||
                   finalDataObj.Plot.PlotID === "" ||
-                  finalDataObj.Date.ProposedDate === ""
+                  finalDataObj.Date.ProposedDate === "" ||
+                  finalDataObj.Farmer.FarmerID === "None" ||
+                  finalDataObj.Plot.PlotID === "None" ||
+                  finalDataObj.Date.ProposedDate === "None"
                 ) {
                   alert("Select Plot,Farmer and Date !");
                   // window.location.href = "/";
                   // return <Redirect to="/" />;
                   setValid(false);
                 } else {
-                  console.log("Form submitted");
-                  console.log(finalDataObj);
-
-                  setValid(true);
+                  axios
+                    .post("http://localhost:3000/dailyDiary", {
+                      data: finalDataObj
+                    })
+                    .then((res) => {
+                      if (res.status !== 200) {
+                        setValid(false);
+                        alert("Failed to insert Daily Diary");
+                      } else {
+                        console.log("result", res);
+                        console.log("Form submitted");
+                        console.log(finalDataObj);
+                        setValid(true);
+                      }
+                    })
+                    .catch((err) => {
+                      setValid(false);
+                      alert(err.message);
+                      console.log("error", err);
+                    });
                   // window.location.href = "/Success";
                   // return <Redirect to="/Success" />;
 
