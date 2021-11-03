@@ -7,7 +7,7 @@ function PlotDropdown(props) {
   const getPlot = props.getPlot;
 
   const handleChange = (opt) => {
-    console.log("Option", opt);
+    // console.log("Option", opt);
     getPlot({ PlotID: opt.plot, FarmerID: opt.farmerId });
   };
 
@@ -18,18 +18,19 @@ function PlotDropdown(props) {
         ...props.plotsFromFarmer.plot,
         {
           plot: "ALL",
-          farmerId: props.plotsFromFarmer.farmerId,
+          farmerId: props.plotsFromFarmer.FarmerID,
           farmerName: ""
         }
       ]
     : [
         {
           plot: "None",
-          farmerName: ""
+          farmerName: "",
+          farmerId: ""
         }
       ];
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div>
