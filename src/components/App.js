@@ -21,17 +21,24 @@ function App() {
     Date: { ProposedDate: "" }
   });
 
+  const [plotsFromFarmer, setPlotsFromFarmer] = useState({});
+
   const [isvalid, setValid] = useState(false);
 
   function getFarmer(data) {
     temp = finalDataObj;
-    temp.Farmer = data;
+    temp.Farmer = { FarmerID: data.FarmerID };
     setFinalDataObj(temp);
+    // console.log("Data here : ", data);
+    setPlotsFromFarmer(data);
   }
 
   function getPlot(data) {
+    console.log(data);
+
     temp = finalDataObj;
-    temp.Plot = data;
+    temp.Plot = { PlotID: data.PlotID };
+    temp.Farmer = { FarmerID: data.FarmerID };
     setFinalDataObj(temp);
   }
 
@@ -86,7 +93,7 @@ function App() {
             <FarmerDropdown getFarmer={getFarmer} />
             <br />
             <hr /> <br />
-            <PlotDropdown getPlot={getPlot} />
+            <PlotDropdown getPlot={getPlot} plotsFromFarmer={plotsFromFarmer} />
             <br />
             <hr /> <br />
             <label htmlFor="myDate">Select a Date : </label>

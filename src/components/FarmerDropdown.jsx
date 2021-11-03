@@ -40,7 +40,7 @@ function FarmerDropdown(props) {
         getOptionLabel={(option) => option.farmerName}
         getOptionValue={(option) => option.farmerID}
         onChange={(opt) => {
-          getFarmer({ FarmerID: opt.farmerID });
+          getFarmer({ FarmerID: opt.farmerID, plot: opt.plot });
         }}
       />
     </div>
