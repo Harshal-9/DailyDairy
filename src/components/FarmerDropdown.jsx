@@ -9,7 +9,7 @@ function FarmerDropdown(props) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/farmers")
+      .get("https://immense-beach-88770.herokuapp.com/farmers/plots")
       .then((res) => {
         // console.log("Here : ", res.data);
         let Data = [...res.data];
