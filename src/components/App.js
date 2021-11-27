@@ -159,9 +159,12 @@ function App() {
                   setValid(false);
                 } else {
                   axios
-                    .post("http://localhost:3000/dailyDiary", {
-                      data: finalDataObj
-                    })
+                    .post(
+                      "https://immense-beach-88770.herokuapp.com/dailyDiary",
+                      {
+                        data: finalDataObj
+                      }
+                    )
                     .then((res) => {
                       if (res.status !== 200) {
                         setValid(false);
