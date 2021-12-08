@@ -3,6 +3,8 @@ import FarmerDropdown from "./FarmerDropdown";
 import RadioButton from "./RadioButton";
 import PlotDropdown from "./PlotDropdown";
 import Success from "./Success";
+import Failure from "./Failure";
+
 import axios from "axios";
 
 import {
@@ -24,6 +26,7 @@ function App() {
   const [plotsFromFarmer, setPlotsFromFarmer] = useState({});
 
   const [isvalid, setValid] = useState(false);
+  const [gotoFailure, setGotoFailure] = useState(false);
 
   function getFarmer(data) {
     temp = finalDataObj;
@@ -178,6 +181,7 @@ function App() {
                     })
                     .catch((err) => {
                       setValid(false);
+                      setGotoFailure(true);
                       alert(err.message);
                       console.log("error", err);
                     });
@@ -198,10 +202,14 @@ function App() {
             </button>
             <br />
             {isvalid ? <Redirect to="/Success" /> : null}
+            {gotoFailure ? <Redirect to="/Failure" /> : null}
           </div>
         </Route>
         <Route path="/Success">
           <Success />
+        </Route>
+        <Route path="/Failure">
+          <Failure />
         </Route>
       </Switch>
     </Router>
