@@ -44,6 +44,7 @@ function SprayingTable(props) {
           default:
             prevData = obtainedData;
             prevData.row1.ImageLink = data.link;
+            prevData.row1.ImageId = data.id;
             setObtainedData(prevData);
             getFromSprayingTable(obtainedData);
         }
@@ -68,6 +69,7 @@ function SprayingTable(props) {
           default:
             prevData = obtainedData;
             prevData.row2.ImageLink = data.link;
+            prevData.row2.ImageId = data.id;
             setObtainedData(prevData);
             getFromSprayingTable(obtainedData);
         }
@@ -92,6 +94,7 @@ function SprayingTable(props) {
           default:
             prevData = obtainedData;
             prevData.row3.ImageLink = data.link;
+            prevData.row3.ImageId = data.id;
             setObtainedData(prevData);
             getFromSprayingTable(obtainedData);
         }
@@ -116,6 +119,7 @@ function SprayingTable(props) {
           default:
             prevData = obtainedData;
             prevData.row4.ImageLink = data.link;
+            prevData.row4.ImageId = data.id;
             setObtainedData(prevData);
             getFromSprayingTable(obtainedData);
         }
@@ -140,6 +144,7 @@ function SprayingTable(props) {
           default:
             prevData = obtainedData;
             prevData.row5.ImageLink = data.link;
+            prevData.row5.ImageId = data.id;
             setObtainedData(prevData);
             getFromSprayingTable(obtainedData);
         }

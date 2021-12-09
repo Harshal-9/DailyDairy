@@ -52,6 +52,7 @@ function UploadImg(props) {
         // printLink();
         funcTosendLink({
           link: res.data.link,
+          id: res.data.id,
           RowNo: rowNo,
           ColumnNo: columnNo
         }); //sending link to higher level

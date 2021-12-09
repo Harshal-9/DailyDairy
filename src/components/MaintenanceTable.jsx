@@ -18,6 +18,7 @@ function MaintenanceTable(props) {
 
           default:
             obtainedData.row1.ImageLink = data.link;
+            obtainedData.row1.ImageId = data.id;
             getFromMaintainTable(obtainedData);
         }
         break;
@@ -31,6 +32,7 @@ function MaintenanceTable(props) {
 
           default:
             obtainedData.row2.ImageLink = data.link;
+            obtainedData.row2.ImageId = data.id;
             getFromMaintainTable(obtainedData);
         }
         break;
@@ -44,6 +46,7 @@ function MaintenanceTable(props) {
 
           default:
             obtainedData.row3.ImageLink = data.link;
+            obtainedData.row3.ImageId = data.id;
             getFromMaintainTable(obtainedData);
         }
         break;
@@ -57,6 +60,7 @@ function MaintenanceTable(props) {
 
           default:
             obtainedData.row4.ImageLink = data.link;
+            obtainedData.row4.ImageId = data.id;
             getFromMaintainTable(obtainedData);
         }
         break;
@@ -70,6 +74,7 @@ function MaintenanceTable(props) {
 
           default:
             obtainedData.row5.ImageLink = data.link;
+            obtainedData.row5.ImageId = data.id;
             getFromMaintainTable(obtainedData);
         }
         break;
